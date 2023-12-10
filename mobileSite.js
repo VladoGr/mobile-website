@@ -4,6 +4,7 @@ const mobileCard = document.querySelector('.mobile-card')
 let mobile = [
     {
         brand: 'Apple',
+        model:'Iphone 14',
         price: '543',
         operationSistem: 'IOS',
         networkSpeed: '5G',
@@ -14,6 +15,7 @@ let mobile = [
 
     {
         brand: 'Samsung',
+        model: 'Samsung Galaxy s22',
         price: '612',
         operationSistem: 'Android',
         networkSpeed: '4G',
@@ -23,6 +25,7 @@ let mobile = [
     }, 
     {
         brand: 'Motorola',
+        model: 'Motorola g20',
         price: '389',
         operationSistem: 'Android',
         networkSpeed: '5G',
@@ -31,13 +34,24 @@ let mobile = [
         image: './mobile_site_photo/Motorola-e7.jpeg',
     },
     {
-        brand: 'Bogdan',
+        brand: 'Huawei',
+        model: 'Huawei P50 PRO',
         price: '1000',
         operationSistem: 'Android',
         networkSpeed: '5G',
         batterryCapacity: '5200Ah',
         displayResolution: '6,5',
-        image: './mobile_site_photo/Motorola-e7.jpeg',
+        image: './mobile_site_photo/Huawei_ p50_pro.jpeg',
+    },
+    {
+        brand: 'Sony',
+        model: 'Sony Xperia 10 IV',
+        price: '1200',
+        operationSistem: 'Android',
+        networkSpeed: '5G',
+        batterryCapacity: '4900Ah',
+        displayResolution: '6,7',
+        image: './mobile_site_photo/sony_xperia_10_IV.jpeg',
     }
 ]
 
@@ -52,8 +66,8 @@ const displayMobile = (arg) => {
             <img src="${e.image}" alt="image no found">
         </figure>
         <div class="card-text">
-            <h1 class="card-title">${e.brand}</h1>
-            <h1 class="card-price">${e.price}$</h1>
+            <h1 class="card-title">${e.model}</h1>
+            <h1 class="card-price">${e.price} \u20AC</h1>
             <p class="card-text">${e.operationSistem}, ${e.networkSpeed}, ${e.batterryCapacity}, ${e.displayResolution}</p>
         </div>
     </article>`
@@ -71,7 +85,6 @@ const displayMobile = (arg) => {
             let item = e.currentTarget.value;
             let filterItem = mobile.filter(arr => {
                 if(arr.brand === item || arr.operationSistem === item || arr.networkSpeed === item) {
-                    console.log(arr)
                     return arr;
                 };
             })
